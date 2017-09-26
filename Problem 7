@@ -7,7 +7,7 @@ n = 1
 lst = []
 while len(lst) < 10000:
 	a = 21
-	for i in range(3, num, 2):
+	for i in range(3, int(num/2 + 1), 2):
 		if num%i == 0:
 			a = 0
 			break
@@ -17,6 +17,5 @@ while len(lst) < 10000:
 	    pass
 	n = n + 1
 	num = 2*n + 1
-#your code here    
 
-print time.clock() - start
+print time.clock() - start   
