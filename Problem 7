@@ -1,0 +1,22 @@
+import time
+start = time.clock()
+
+num = 2
+n = 1
+
+lst = []
+while len(lst) < 10000:
+	a = 21
+	for i in range(3, num, 2):
+		if num%i == 0:
+			a = 0
+			break
+	if a != 0:
+	    lst.append(num)
+	else:
+	    pass
+	n = n + 1
+	num = 2*n + 1
+#your code here    
+
+print time.clock() - start
