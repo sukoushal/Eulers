@@ -1,0 +1,46 @@
+
+word = ['' ,'','twenty','thirty','forty','fifty','sixty','seventy','eighty','ninety']
+back = ['','one','two','three','four','five','six','seven','eight','nine','ten']
+excep = ['ten','eleven','twelve','thirteen','fourteen','fifteen','sixteen','seventeen','eighteen ','nineteen']
+hundred = ['hundred']
+
+def num(x):
+	num_1 = str(x)
+	l = [int(z) for z in num_1]
+	if len(num_1) == 2:
+		if x >= 20:
+			first =  word[l[0]]
+			second = back[l[1]]
+			return first + second
+		if x < 20:
+			return excep[l[1]]
+	if len(num_1) == 1:
+		return back[l[0]]
+	if len(num_1) == 3:	
+		if l[1] >= 2:
+			first = back[l[0]]
+			second = hundred[0]
+			third  = word[l[1]]
+			fourth = back[l[2]]
+			return first + second +'and'+ third + fourth
+		if l[1] == 1:
+			first = back[l[0]]
+			second = hundred[0]
+			third = excep[l[2]]
+			return first + second + 'and' + third
+		if x % 100 == 0:
+			first = back[l[0]]
+			second = hundred[0]
+			return first + second
+		else:
+			first = back[l[0]]
+			second = hundred[0]
+			third  = word[l[1]]
+			fourth = back[l[2]]
+			return first + second +'and'+ third + fourth
+
+
+letter_count = 0
+for i in range(1,1000):
+	x = len(num(i))
+	letter_count = letter_count + x
