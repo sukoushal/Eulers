@@ -1,0 +1,9 @@
+def factorial(x):
+	if x == 0:
+		return 1
+	else:
+		return factorial(x-1) * x
+
+digit = 0
+for i in str(factorial(100)):
+	digit = digit + int(i)
